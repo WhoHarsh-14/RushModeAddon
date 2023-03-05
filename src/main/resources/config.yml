@@ -1,0 +1,14 @@
+# Rush mode addon
+Prefix: "&c[&a&lRush mode&c]"
+
+Messages:
+  Arena_added_to_rush_mode: "&aAdded {arena} to rush mode arenas"
+  Arena_removed_from_rush_mode: "&aRemoved {arena} from rush mode arenas"
+  Bridge_mode_activated: "&f[Rush] &aBridge mode activated"
+  Bridge_mode_deactivated: "&f[Rush] &cBridge mode deactivated"
+
+
+# List of arenas for rush mode
+Arenas:
+  - "rushModeArena"
+  - "MultipleArenaSupport"

@@ -1,0 +1,4 @@
+name: RushModeAddon
+version: '${project.version}'
+main: me.harsh.rushmodeaddon.RushModeAddon
+api-version: 1.13
