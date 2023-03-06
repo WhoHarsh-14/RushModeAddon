@@ -84,8 +84,7 @@ public class Util {
                     .clone().add(0.0D, 0.0D, 2.0D), bedLoc
                     .clone().add(0.0D, 0.0D, -2.0D), bedLoc
                     .clone().add((deltaX * 2 + deltaX), 0.0D, 0.0D),
-                    bedLoc
-                            .clone().add((deltaX + deltaX), 1.0D, 0.0D), bedLoc
+                    bedLoc.clone().add((deltaX + deltaX), 1.0D, 0.0D), bedLoc
                     .clone().add((deltaX + deltaX), 0.0D, 1.0D), bedLoc
                     .clone().add((deltaX + deltaX), 0.0D, -1.0D), bedLoc
                     .clone().add(deltaX, 2.0D, 0.0D), bedLoc
@@ -95,17 +94,16 @@ public class Util {
                     .clone().add(deltaX, 0.0D, -2.0D)));
             glasses = new ArrayList<>(Arrays.asList(bedLoc
                     .clone().add((-deltaX * 3), 0.0D, 0.0D), bedLoc
-            .clone().add((-deltaX * 2), 1.0D, 0.0D), bedLoc
-            .clone().add((-deltaX * 2), 0.0D, -1.0D), bedLoc
-            .clone().add((-deltaX * 2), 0.0D, 1.0D), bedLoc
-            .clone().add(-deltaX, 1.0D, 1.0D), bedLoc
-            .clone().add(-deltaX, 1.0D, -1.0D), bedLoc
-            .clone().add(-deltaX, 0.0D, 2.0D), bedLoc
-            .clone().add(-deltaX, 0.0D, -2.0D), bedLoc
-            .clone().add(-deltaX, 2.0D, 0.0D), bedLoc
-            .clone().add(0.0D, 0.0D, -3.0D),
-                    bedLoc
-                            .clone().add(0.0D, 0.0D, 3.0D), bedLoc
+                    .clone().add((-deltaX * 2), 1.0D, 0.0D), bedLoc
+                    .clone().add((-deltaX * 2), 0.0D, -1.0D), bedLoc
+                    .clone().add((-deltaX * 2), 0.0D, 1.0D), bedLoc
+                    .clone().add(-deltaX, 1.0D, 1.0D), bedLoc
+                    .clone().add(-deltaX, 1.0D, -1.0D), bedLoc
+                    .clone().add(-deltaX, 0.0D, 2.0D), bedLoc
+                    .clone().add(-deltaX, 0.0D, -2.0D), bedLoc
+                    .clone().add(-deltaX, 2.0D, 0.0D), bedLoc
+                    .clone().add(0.0D, 0.0D, -3.0D),
+                    bedLoc.clone().add(0.0D, 0.0D, 3.0D), bedLoc
                     .clone().add(0.0D, 1.0D, 2.0D), bedLoc
                     .clone().add(0.0D, 1.0D, -2.0D), bedLoc
                     .clone().add(0.0D, 2.0D, 1.0D), bedLoc
@@ -115,8 +113,7 @@ public class Util {
                     .clone().add((deltaX * 2 + deltaX), 1.0D, 0.0D), bedLoc
                     .clone().add((deltaX * 2 + deltaX), 0.0D, -1.0D), bedLoc
                     .clone().add((deltaX * 2 + deltaX), 0.0D, 1.0D),
-                    bedLoc
-                            .clone().add((deltaX + deltaX), 1.0D, 1.0D), bedLoc
+                    bedLoc.clone().add((deltaX + deltaX), 1.0D, 1.0D), bedLoc
                     .clone().add((deltaX + deltaX), 1.0D, -1.0D), bedLoc
                     .clone().add((deltaX + deltaX), 0.0D, 2.0D), bedLoc
                     .clone().add((deltaX + deltaX), 0.0D, -2.0D), bedLoc
@@ -126,8 +123,7 @@ public class Util {
                     .clone().add(deltaX, 1.0D, 2.0D), bedLoc
                     .clone().add(deltaX, 1.0D, -2.0D), bedLoc
                     .clone().add(deltaX, 2.0D, 1.0D),
-                    bedLoc
-                            .clone().add(deltaX, 2.0D, -1.0D), bedLoc
+                    bedLoc.clone().add(deltaX, 2.0D, -1.0D), bedLoc
                     .clone().add(deltaX, 3.0D, 0.0D)));
         } else if (deltaZ != 0) {
             woods = new ArrayList<>(Arrays.asList(bedLoc
@@ -141,17 +137,16 @@ public class Util {
                     .clone().add(0.0D, 1.0D, deltaZ)));
             wools = new ArrayList<>(Arrays.asList(bedLoc
                     .clone().add(0.0D, 0.0D, (-deltaZ * 2)), bedLoc
-            .clone().add(0.0D, 1.0D, -deltaZ), bedLoc
-            .clone().add(1.0D, 0.0D, -deltaZ), bedLoc
-            .clone().add(-1.0D, 0.0D, -deltaZ), bedLoc
-            .clone().add(0.0D, 2.0D, 0.0D), bedLoc
-            .clone().add(1.0D, 1.0D, 0.0D), bedLoc
-            .clone().add(-1.0D, 1.0D, 0.0D), bedLoc
-            .clone().add(2.0D, 0.0D, 0.0D), bedLoc
-            .clone().add(-2.0D, 0.0D, 0.0D), bedLoc
-            .clone().add(0.0D, 0.0D, (deltaZ * 2 + deltaZ)),
-                    bedLoc
-                            .clone().add(0.0D, 1.0D, (deltaZ + deltaZ)), bedLoc
+                    .clone().add(0.0D, 1.0D, -deltaZ), bedLoc
+                    .clone().add(1.0D, 0.0D, -deltaZ), bedLoc
+                    .clone().add(-1.0D, 0.0D, -deltaZ), bedLoc
+                    .clone().add(0.0D, 2.0D, 0.0D), bedLoc
+                    .clone().add(1.0D, 1.0D, 0.0D), bedLoc
+                    .clone().add(-1.0D, 1.0D, 0.0D), bedLoc
+                    .clone().add(2.0D, 0.0D, 0.0D), bedLoc
+                    .clone().add(-2.0D, 0.0D, 0.0D), bedLoc
+                    .clone().add(0.0D, 0.0D, (deltaZ * 2 + deltaZ)),
+                    bedLoc.clone().add(0.0D, 1.0D, (deltaZ + deltaZ)), bedLoc
                     .clone().add(1.0D, 0.0D, (deltaZ + deltaZ)), bedLoc
                     .clone().add(-1.0D, 0.0D, (deltaZ + deltaZ)), bedLoc
                     .clone().add(0.0D, 2.0D, deltaZ), bedLoc
@@ -161,17 +156,16 @@ public class Util {
                     .clone().add(-2.0D, 0.0D, deltaZ)));
             glasses = new ArrayList<>(Arrays.asList(bedLoc
                     .clone().add(0.0D, 0.0D, (-deltaZ * 3)), bedLoc
-            .clone().add(0.0D, 1.0D, (-deltaZ * 2)), bedLoc
-            .clone().add(-1.0D, 0.0D, (-deltaZ * 2)), bedLoc
-            .clone().add(1.0D, 0.0D, (-deltaZ * 2)), bedLoc
-            .clone().add(1.0D, 1.0D, -deltaZ), bedLoc
-            .clone().add(-1.0D, 1.0D, -deltaZ), bedLoc
-            .clone().add(2.0D, 0.0D, -deltaZ), bedLoc
-            .clone().add(-2.0D, 0.0D, -deltaZ), bedLoc
-            .clone().add(0.0D, 2.0D, -deltaZ), bedLoc
-            .clone().add(-3.0D, 0.0D, 0.0D),
-                    bedLoc
-                            .clone().add(3.0D, 0.0D, 0.0D), bedLoc
+                    .clone().add(0.0D, 1.0D, (-deltaZ * 2)), bedLoc
+                    .clone().add(-1.0D, 0.0D, (-deltaZ * 2)), bedLoc
+                    .clone().add(1.0D, 0.0D, (-deltaZ * 2)), bedLoc
+                    .clone().add(1.0D, 1.0D, -deltaZ), bedLoc
+                    .clone().add(-1.0D, 1.0D, -deltaZ), bedLoc
+                    .clone().add(2.0D, 0.0D, -deltaZ), bedLoc
+                    .clone().add(-2.0D, 0.0D, -deltaZ), bedLoc
+                    .clone().add(0.0D, 2.0D, -deltaZ), bedLoc
+                    .clone().add(-3.0D, 0.0D, 0.0D),
+                    bedLoc.clone().add(3.0D, 0.0D, 0.0D), bedLoc
                     .clone().add(2.0D, 1.0D, 0.0D), bedLoc
                     .clone().add(-2.0D, 1.0D, 0.0D), bedLoc
                     .clone().add(1.0D, 2.0D, 0.0D), bedLoc
@@ -181,8 +175,7 @@ public class Util {
                     .clone().add(0.0D, 1.0D, (deltaZ * 2 + deltaZ)), bedLoc
                     .clone().add(-1.0D, 0.0D, (deltaZ * 2 + deltaZ)), bedLoc
                     .clone().add(1.0D, 0.0D, (deltaZ * 2 + deltaZ)),
-                    bedLoc
-                            .clone().add(1.0D, 1.0D, (deltaZ + deltaZ)), bedLoc
+                    bedLoc.clone().add(1.0D, 1.0D, (deltaZ + deltaZ)), bedLoc
                     .clone().add(-1.0D, 1.0D, (deltaZ + deltaZ)), bedLoc
                     .clone().add(2.0D, 0.0D, (deltaZ + deltaZ)), bedLoc
                     .clone().add(-2.0D, 0.0D, (deltaZ + deltaZ)), bedLoc
@@ -192,8 +185,7 @@ public class Util {
                     .clone().add(2.0D, 1.0D, deltaZ), bedLoc
                     .clone().add(-2.0D, 1.0D, deltaZ), bedLoc
                     .clone().add(1.0D, 2.0D, deltaZ),
-                    bedLoc
-                            .clone().add(-1.0D, 2.0D, deltaZ), bedLoc
+                    bedLoc.clone().add(-1.0D, 2.0D, deltaZ), bedLoc
                     .clone().add(0.0D, 3.0D, deltaZ)));
         }
         woods.forEach(location -> {
