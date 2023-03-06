@@ -3,6 +3,8 @@ package me.harsh.rushmodeaddon.config;
 import me.harsh.rushmodeaddon.RushModeAddon;
 import org.bukkit.configuration.file.FileConfiguration;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 public class Config {
@@ -37,12 +39,14 @@ public class Config {
         return RushModeAddon.getPlugin().getConfig();
     }
 
-    public static void addArenaRushMode(String arena){
+    public static void addArenaRushMode(String arena)  {
         ARENA_LIST.add(arena);
         get().set("Arenas", ARENA_LIST);
+        RushModeAddon.getPlugin().saveConfig();
     }
-    public static void removeArenaRushMode(String arena){
+    public static void removeArenaRushMode(String arena)  {
         ARENA_LIST.remove(arena);
         get().set("Arenas", ARENA_LIST);
+        RushModeAddon.getPlugin().saveConfig();
     }
 }

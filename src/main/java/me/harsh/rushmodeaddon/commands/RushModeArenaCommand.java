@@ -28,13 +28,14 @@ public class RushModeArenaCommand implements CommandHandler {
                     final Arena arena = GameAPI.get().getArenaByName(strings[1]);
                     if (arena == null) return;
                     Config.addArenaRushMode(arena.getName());
-                    Util.tell(commandSender, Config.ARENA_ADDED);
+                    Util.tell(commandSender, Config.ARENA_ADDED.replace("{arena}", arena.getName()));
                     break;
                 case "remove":
                     final String arr = strings[1];
-                    if (Config.ARENA_LIST.contains(arr))
+                    if (Config.ARENA_LIST.contains(arr)) {
                         Config.removeArenaRushMode(arr);
-                    Util.tell(commandSender, Config.ARENA_REMOVED);
+                    }
+                    Util.tell(commandSender, Config.ARENA_REMOVED.replace("{arena}", arr));
                     break;
                 case "reload":
                     Config.reload();

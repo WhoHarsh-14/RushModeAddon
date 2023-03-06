@@ -1,14 +1,12 @@
 package me.harsh.rushmodeaddon.utils;
 
-import com.cryptomorin.xseries.messages.ActionBar;
 import de.marcely.bedwars.api.GameAPI;
 import de.marcely.bedwars.api.arena.Arena;
 import de.marcely.bedwars.api.arena.Team;
+import de.marcely.bedwars.libraries.com.cryptomorin.xseries.XMaterial;
+import de.marcely.bedwars.libraries.com.cryptomorin.xseries.messages.ActionBar;
 import de.marcely.bedwars.tools.PersistentBlockData;
 import me.harsh.rushmodeaddon.config.Config;
-import net.md_5.bungee.api.ChatMessageType;
-import net.md_5.bungee.api.chat.BaseComponent;
-import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -78,15 +76,15 @@ public class Util {
                     .clone().add(deltaX, 1.0D, 0.0D)));
             wools = new ArrayList<>(Arrays.asList(bedLoc
                     .clone().add((-deltaX * 2), 0.0D, 0.0D), bedLoc
-            .clone().add(-deltaX, 1.0D, 0.0D), bedLoc
-            .clone().add(-deltaX, 0.0D, 1.0D), bedLoc
-            .clone().add(-deltaX, 0.0D, -1.0D), bedLoc
-            .clone().add(0.0D, 2.0D, 0.0D), bedLoc
-            .clone().add(0.0D, 1.0D, 1.0D), bedLoc
-            .clone().add(0.0D, 1.0D, -1.0D), bedLoc
-            .clone().add(0.0D, 0.0D, 2.0D), bedLoc
-            .clone().add(0.0D, 0.0D, -2.0D), bedLoc
-            .clone().add((deltaX * 2 + deltaX), 0.0D, 0.0D),
+                    .clone().add(-deltaX, 1.0D, 0.0D), bedLoc
+                    .clone().add(-deltaX, 0.0D, 1.0D), bedLoc
+                    .clone().add(-deltaX, 0.0D, -1.0D), bedLoc
+                    .clone().add(0.0D, 2.0D, 0.0D), bedLoc
+                    .clone().add(0.0D, 1.0D, 1.0D), bedLoc
+                    .clone().add(0.0D, 1.0D, -1.0D), bedLoc
+                    .clone().add(0.0D, 0.0D, 2.0D), bedLoc
+                    .clone().add(0.0D, 0.0D, -2.0D), bedLoc
+                    .clone().add((deltaX * 2 + deltaX), 0.0D, 0.0D),
                     bedLoc
                             .clone().add((deltaX + deltaX), 1.0D, 0.0D), bedLoc
                     .clone().add((deltaX + deltaX), 0.0D, 1.0D), bedLoc
@@ -201,20 +199,20 @@ public class Util {
         }
         woods.forEach(location -> {
             if (location.getBlock().getType() == Material.AIR) {
-                location.getBlock().setType(Material.WOOD);
+                location.getBlock().setType(XMaterial.OAK_PLANKS.parseMaterial());
                 arena.setBlockPlayerPlaced(location.getBlock(), true);
             }
         });
         wools.forEach(location -> {
             if (location.getBlock().getType() == Material.AIR) {
-                location.getBlock().setType(Material.WOOL);
+                location.getBlock().setType(XMaterial.WHITE_WOOL.parseMaterial());
                 final PersistentBlockData data = PersistentBlockData.fromMaterial(Material.WOOL).getDyedData(team.getDyeColor());
                 data.place(location.getBlock(), true);
             }
         });
         glasses.forEach(location -> {
             if (location.getBlock().getType() == Material.AIR) {
-                location.getBlock().setType(Material.STAINED_GLASS);
+                location.getBlock().setType(XMaterial.WHITE_STAINED_GLASS.parseMaterial());
                 final PersistentBlockData data = PersistentBlockData.fromMaterial(Material.STAINED_GLASS).getDyedData(team.getDyeColor());
                 data.place(location.getBlock(), true);
             }
