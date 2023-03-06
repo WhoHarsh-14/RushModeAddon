@@ -4,10 +4,7 @@ import de.marcely.bedwars.api.GameAPI;
 import de.marcely.bedwars.api.arena.Arena;
 import de.marcely.bedwars.api.arena.ArenaStatus;
 import de.marcely.bedwars.api.arena.Team;
-import de.marcely.bedwars.api.event.ShopGUIPostProcessEvent;
 import de.marcely.bedwars.api.event.arena.RoundStartEvent;
-import de.marcely.bedwars.api.game.shop.ShopItem;
-import de.marcely.bedwars.api.game.shop.price.ShopPrice;
 import de.marcely.bedwars.api.game.upgrade.TeamEnchantment;
 import de.marcely.bedwars.libraries.com.cryptomorin.xseries.XMaterial;
 import me.harsh.rushmodeaddon.RushModeAddon;
@@ -25,13 +22,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.material.Bed;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -51,7 +45,7 @@ public class PlayerArenaListener implements Listener {
             for (Block block : arena.getBedParts(team)){
                 if (!(block.getState().getData() instanceof Bed)){
                     System.out.println("[!] block state data is not bed for some weird reason");
-                    return;
+                    continue;
                 }
                 final Bed b = (Bed) block.getState().getData();
                 if (b.isHeadOfBed())
@@ -68,27 +62,6 @@ public class PlayerArenaListener implements Listener {
         }
     }
 
-    @EventHandler
-    public void onShopOpen(ShopGUIPostProcessEvent event){
-        if (event.getPage() == null) return;
-        final Player player =event.getPlayer();
-        final Arena arena = GameAPI.get().getArenaByPlayer(player);
-        if (arena == null || !(Util.getRushArenas().contains(arena)) || arena.getStatus() != ArenaStatus.RUNNING) return;
-        for (ShopItem shopItem : event.getPage().getItems()) {
-            if (shopItem == null) continue;
-            for (ShopPrice price : shopItem.getPrices()) {
-                if (price == null) continue;
-                if (shopItem.getIcon().getType() == XMaterial.ENDER_PEARL.parseMaterial()) {
-                    final ItemStack itemStack = price.getDisplayItem(player);
-                    final ItemMeta meta = itemStack.getItemMeta();
-                    meta.setLore(Arrays.asList("", "&bPrice: &a2 Emerald"));
-                    itemStack.setItemMeta(meta);
-                }
-                if (shopItem.getIcon().getType() == XMaterial.EGG.parseMaterial())
-                    price.setGeneralAmount(1);
-            }
-        }
-    }
 
     @EventHandler
     public void onPlayerToggle(PlayerInteractEvent event){
@@ -135,7 +108,7 @@ public class PlayerArenaListener implements Listener {
                         .getWorld().getNearbyEntities(nextBlock, 0.45D, 0.5D, 0.45D).size() <= 0 && nextBlock
                         .getBlock().getType() == Material.AIR &&
                         arena.isBlockPlayerPlaced(nextBlock.getBlock())) {
-                    nextBlock.getBlock().setTypeIdAndData(placed.getType().getId(), placed.getData(), true);
+                    nextBlock.getBlock().setTypeIdAndData(placed.getType().getId(),placed.getData(), true);
                     nextBlock.getWorld().playSound(nextBlock, Sound.valueOf(String.format("BLOCK_%s_BREAK", nextBlock.getBlock().getType().name())), 1.0F, 1.0F);
                     arena.setBlockPlayerPlaced(nextBlock.getBlock(), true);
                     nextBlock.add(vector);

@@ -54,13 +54,12 @@ public class Util {
         }
     }
 
-    // Thanks to Happy_FZM For this beautiful method
-    // Only migrated by harsh
     public static void setProtectBlocks(Arena arena, Team team, Bed bed, Location bedLoc) {
+        // For marcel :- make sure the "bed" is head for exact measurements
         int deltaX = bed.getFacing().getModX();
         int deltaZ = bed.getFacing().getModZ();
-        if (bed.isHeadOfBed())
-            bedLoc.subtract(deltaX, 0.0D, deltaZ);
+        // Because bed is head
+        bedLoc.subtract(deltaX, 0.0D, deltaZ);
         ArrayList<Location> woods = new ArrayList<>();
         ArrayList<Location> wools = new ArrayList<>();
         ArrayList<Location> glasses = new ArrayList<>();
